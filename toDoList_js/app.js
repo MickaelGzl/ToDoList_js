@@ -8,8 +8,9 @@ let label = document.getElementById('lbl');
 
 /*Lecture des cookies pour récupérer ancienne liste si existe*/
 allCookies = document.cookie;
+console.log(allCookies)
 if(allCookies != null){
-    let listElems = allCookies.substring(6).split(',')
+    let listElems = allCookies.substring(72).split(',')
     let tb = Array.from(listElems);
     tb.forEach(text => {
         let li = document.createElement('li');
@@ -155,7 +156,7 @@ let txt = list.childNodes[0]
 list.removeChild(txt)
 
 /*adapte meter en enregistre liste dans cookies chaque 0.1sec*/
-setInterval(cs, 100)       
+setInterval(cs, 00)       
 function cs(){
     let elems = list.childNodes;
     let count = elems.length;

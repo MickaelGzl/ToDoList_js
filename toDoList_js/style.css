@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    background-image: linear-gradient(
+        55deg,
+        hsl(240deg 100% 20%) 22%,
+        hsl(240deg 36% 33%) 52%,
+        hsl(240deg 24% 39%) 65%,
+        hsl(239deg 18% 45%) 74%,
+        hsl(239deg 15% 49%) 80%,
+        hsl(239deg 14% 54%) 85%,
+        hsl(239deg 14% 57%) 89%,
+        hsl(239deg 14% 61%) 92%,
+        hsl(239deg 14% 64%) 94%,
+        hsl(238deg 14% 68%) 96%,
+        hsl(238deg 14% 71%) 98%,
+        hsl(238deg 14% 74%) 99%,
+        hsl(237deg 15% 76%) 100%,
+        hsl(237deg 16% 79%) 101%,
+        hsl(237deg 17% 82%) 101%,
+        hsl(236deg 18% 84%) 102%,
+        hsl(236deg 20% 87%) 102%,
+        hsl(236deg 23% 89%) 102%,
+        hsl(235deg 27% 92%) 101%,
+        hsl(235deg 34% 94%) 101%,
+        hsl(234deg 49% 96%) 101%,
+        hsl(233deg 100% 98%) 100%
+    );
+}
+
+.container {
+    border-radius: 10%;
+    width: 100%;
+    max-width: 480px;
+    max-height: 100%;
+    background-color: #10101d;
+    padding: 24px;
+    overflow: auto;
+}
+
+h1 {
+    font-size: 1.2em;
+    line-height: 32px;
+    margin-bottom: 1em;
+    color: #fff;
+}
+
+.addTask {
+    height: 40px;
+    font-size: 1em;
+    display: flex;
+    margin-bottom: 1em;
+}
+
+input{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.addTask input {
+    width: 100%;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 0.8em;
+}
+
+
+li{
+    list-style: none;
+}
+
+.taskListItem {
+    background-color: #191933;
+    border-radius: 4px;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.hide{
+    display: none;
+}
+
+
+
+
+
+
+ /* checkbox */
+.check {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    appearance: none;
+    background-color: #bbb;
+    transition: all .3s;
+   }
+   
+   .check::before {
+    content: '';
+    position: absolute;
+    border: solid #fff;
+    display: block;
+    width: .3em;
+    height: .6em;
+    border-width: 0 .2em .2em 0;
+    z-index: 1;
+    opacity: 0;
+    right: calc(50% - .3em);
+    top: calc(50% - .6em);
+    transform: rotate(0deg);
+    transition: all .3s;
+    transform-origin: center center;
+   }
+   
+   .check:checked {
+    animation: a .3s ease-in forwards;
+    background-color: rgb(120, 190, 120);
+   }
+   
+   .check:checked::before {
+    opacity: 1;
+    transform: rotate(405deg);
+   }
+
+   .check:checked + span{
+    text-decoration: line-through;
+    color: #818181
+   }
+   
+   @keyframes a {
+    0% {
+     opacity: 1;
+     transform: scale(1) rotateY(0deg);
+    }
+   
+    50% {
+     opacity: 0;
+     transform: scale(.8) rotateY(180deg);
+    }
+   
+    100% {
+     opacity: 1;
+     transform: scale(1) rotateY(360deg);
+    }
+   }

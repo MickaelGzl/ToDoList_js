@@ -174,10 +174,93 @@ li span{
    }
 
 .alertMessage{
+    z-index: 1;
+    background-color:#191933;
     position: absolute;
+    width: 75%;
+    max-width: 600px;
     transform: translateY(-40vh);
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 0.6em;
+    margin-top: 10vh;
+    transition: all 0.4s;
 }
 
 .onTop{
-    transform: translateY(-60vh);
+    transform: translateY(-100vh);
+    transition: all 0.4s;
+}
+
+.alertMessage div div h1{
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.alertMessage div div{
+    text-align: center;
+}
+
+.choice{
+    margin: 1em 0;
+    display:flex;
+    justify-content: space-around;
+}
+
+.choice div button {
+    background-color: #191933;
+    color: #fff;
+    text-transform: uppercase;
+    margin-left: 0;
+    width: 6em;
+    height: 2em;
+    border-radius: 30em;
+    font-size: 15px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+  
+.choice div {
+    padding: 0.3em;
+    border-radius: 30em;
+    position: relative;
+    z-index: 10;
+}
+
+.choice div::before {
+    content: '';
+    width: 0;
+    height: 100%;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%); */
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.choice .delN::before{
+    background-image: linear-gradient(to right, #420606 0%, #c20f0f 100%);
+}
+
+.choice .delY::before{
+    background-image: linear-gradient(to right, #04024e 0%, #47a9f9 100%);
+}
+
+.choice div:hover::before {
+    width: 100%;
+}
+
+.rappel{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.rappel label{
+    margin-right: 0.4em;
 }

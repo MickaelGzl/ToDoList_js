@@ -11,12 +11,21 @@
 </head>
 
 <body>
-    <div class="alertMessage onTop">
-        <p>Vous allez supprimer une activité de votre to-do list, continuer ?</p>
-        <button>oui</button>
-        <button>non</button>
-        <label for="noRappel">Ne plus me rapeller</label>
-        <input type="checkbox" id="noRappel">
+    <div id="delAlert" class="alertMessage onTop">
+        <div>
+            <div>
+                <h1>Attention!</h1>
+                <p>Vous allez supprimer une activité de votre to-do list, continuer ?</p>
+            </div>
+            <div class="choice">
+                <div class="delN"><button class="deleteN">non</button></div>
+                <div class="delY"><button class="deleteY" >oui</button></div>
+            </div>
+            <div class="rappel">
+                <label for="noRappel">Ne plus me rapeller</label>
+                <input type="checkbox" id="noRappel">
+            </div>
+        </div>
     </div>
 
     <div class="container">

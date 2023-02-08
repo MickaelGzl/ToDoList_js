@@ -5,6 +5,11 @@ let container = document.getElementsByClassName('container')[0];
 let bar = document.getElementById('bar');
 let completion = document.getElementById('completion');
 let label = document.getElementById('lbl');
+let delAlert = document.getElementById('delAlert');
+let btnY = document.querySelector('.deleteY');
+let btnN = document.querySelector('.deleteN');
+let rappelCheck = document.getElementById('noRappel');
+let noRappel = false;
 
 let editionMode = false;
 
@@ -147,6 +152,9 @@ function deleteElem(e){
         container.append(p);
         bar.classList.add('hide');
     }
+    delAlert.classList.add('onTop');
+    editionMode = false;
+    content.disabled = false;
 }
 
 /*Editer la tâche*/
@@ -172,6 +180,7 @@ function editElem(e){
             }
             text.nextSibling.replaceChild(actualBtn, confirmBtn)
             editionMode = false;
+            content.disabled = false
         }
     })   
 
@@ -187,6 +196,7 @@ function editElem(e){
         }
         text.nextSibling.replaceChild(actualBtn, confirmBtn)
         editionMode = false;
+        content.disabled = false
     })
 }
 
@@ -197,12 +207,35 @@ function onModif(e){
     return actualBtn
 }
 
+function noDel(){
+    delAlert.classList.add('onTop');
+    editionMode = false;
+}
 
 /*click sur éléments liste pour repérer si efface ou édite*/
 list.addEventListener('click', function(e){
     if(e.target.classList.contains('fa-trash-can')){
         if(editionMode == false){
-            deleteElem(e)
+            content.disabled = true;
+            delAlert.classList.remove('onTop');
+            editionMode = true;
+            if(noRappel == false){
+                btnY.addEventListener('click', function(){
+                    deleteElem(e)
+                    if(rappelCheck.checked == true){
+                    noRappel = true;
+                    }  
+                })
+            }
+            else{
+                deleteElem(e);
+            }
+            btnN.addEventListener('click', function(){
+                noDel();
+                if(rappelCheck.checked == true){
+                    noRappel = true;
+                }
+            })
         }
     }
     if(e.target.classList.contains('fa-pencil')){
@@ -254,9 +287,6 @@ event.target
 */
 
 /*
-lors de suppression: modale de confirmation de suppression
-                        case à cocher pour ne plus rappeler 
-
 MutationObserver: voir pour remplacer la fonction qui se déroule toute les 0.1s
 
 drag and drop

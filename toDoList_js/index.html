@@ -5,16 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
     <title>To Do List JS</title>
 </head>
 
 <body>
+    <div class="alertMessage onTop">
+        <p>Vous allez supprimer une activité de votre to-do list, continuer ?</p>
+        <button>oui</button>
+        <button>non</button>
+        <label for="noRappel">Ne plus me rapeller</label>
+        <input type="checkbox" id="noRappel">
+    </div>
 
     <div class="container">
         <h1> To Do List</h1>
         <div class="addTask">
-            <input id='taskInput' type="text" placeholder="Nouvelle tâche">
+            <input id='taskInput' type="text" placeholder="Nouvelle tâche" aria-label="nouvelle tâche" >
             <button id='add' class="addButton"><i class="fa-solid fa-circle-plus" style="font-size:2em;color:#fff"></i></button>
         </div>
 
@@ -30,7 +38,7 @@
 
 
     <script src="https://kit.fontawesome.com/f70f3cf14b.js" crossorigin="anonymous"></script>
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 
 </html>

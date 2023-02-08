@@ -1,0 +1,22 @@
+{
+    "name": "ToDoList_js",
+    "short_name": "TdL",
+    "theme_color": "#191933",
+    "background_color": "#191933",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "https://todolist-480ac.web.app/",
+    "start_url": "https://todolist-480ac.web.app/",
+    "icons": [
+        {
+            "src": "./assets/Picto_APP_512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/Picto_APP_144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ]
+  }

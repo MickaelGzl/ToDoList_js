@@ -105,7 +105,11 @@ li{
 }
 
 
-
+li span{
+    width: 75%;
+    text-align: center;
+    overflow-wrap: break-word;
+}
 
 
 
@@ -168,3 +172,12 @@ li{
      transform: scale(1) rotateY(360deg);
     }
    }
+
+.alertMessage{
+    position: absolute;
+    transform: translateY(-40vh);
+}
+
+.onTop{
+    transform: translateY(-60vh);
+}

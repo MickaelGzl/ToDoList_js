@@ -9,14 +9,14 @@
     "start_url": "https://todolist-480ac.web.app/",
     "icons": [
         {
-            "src": "./assets/Picto_APP_512.png",
+            "src": "public/assets/Picto_APP_512.png",
             "sizes": "512x512",
             "type": "image/png"
         },
         {
-            "src": "./assets/Picto_APP_144.png",
+            "src": "public/assets/Picto_APP_512.png",
             "sizes": "144x144",
             "type": "image/png"
         }
     ]
-  }
+}

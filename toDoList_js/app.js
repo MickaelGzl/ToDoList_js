@@ -278,15 +278,8 @@ function cs(){
 }
 
 
-
-
-
 /*
-this
-event.target
-*/
-
-/*
+split élément de to do list si écrit avec une virgule
 MutationObserver: voir pour remplacer la fonction qui se déroule toute les 0.1s
 
 drag and drop
